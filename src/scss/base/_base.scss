@@ -25,6 +25,13 @@ svg {
   }
 }
 
+.swiper{
+  picture{
+    height: 100%;
+    display: block;
+  }
+}
+
 .swiper-button-prev--mobile.swiper-button-disabled,
 .swiper-button-next--mobile.swiper-button-disabled {
   opacity: 0.35;
