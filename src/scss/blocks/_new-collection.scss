@@ -1,0 +1,39 @@
+.new-collection {
+  text-align: center;
+  padding: 45px 0 35px;
+
+  @include mediaTablet {
+    padding: 35px 0;
+  }
+
+  &-about {
+    padding: 0 13px;
+
+    @include mediaTablet {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-accent);
+    font-size: clamp(1.75rem, 1.393rem + 1.79vw, 2.25rem);
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--title-color);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    position: relative;
+
+    &::after {
+      @include line;
+      width: 240px;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    max-width: 730px;
+    margin: 0 auto 30px;
+  }
+}

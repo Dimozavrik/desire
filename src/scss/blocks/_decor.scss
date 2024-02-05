@@ -1,0 +1,40 @@
+.decor {
+  background-image: url(../img/bg/decor-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 170px 0 155px;
+
+  @include mediaTablet {
+    padding: 70px 0;
+    text-align: center;
+  }
+
+  &__title {
+    max-width: 530px;
+    font-family: var(--font-accent);
+    font-size: clamp(1.875rem, 0.536rem + 6.7vw, 3.75rem);
+    line-height: 1.33;
+    font-weight: 700;
+    color: var(--title-color);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    position: relative;
+
+    &::after {
+      @include line;
+    }
+
+    @include mediaTablet {
+      margin: 0 auto 22px;
+    }
+  }
+
+  &__text {
+    max-width: 530px;
+
+    @include mediaTablet {
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.mobile-nav-btn {
+  width: 40px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-icon {
+  position: relative;
+  width: 40px;
+  height: 4px;
+  background-color: var(--gray);
+  border-radius: 4px;
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: '';
+  display: block;
+
+  position: absolute;
+  left: 0;
+
+  width: 40px;
+  height: 4px;
+
+  border-radius: 4px;
+  background-color: var(--gray);
+  transition: transform 0.1s ease-in,
+    top 0.1s linear 0.1s;
+}
+
+.nav-icon::before {
+  top: -10px;
+}
+
+.nav-icon::after {
+  top: 10px;
+}
+
+.nav-icon.nav-icon--active {
+  background-color: transparent;
+}
+
+.nav-icon.nav-icon--active::before,
+.nav-icon.nav-icon--active::after {
+  top: 0;
+  transition: top 0.1s linear,
+    transform 0.1s ease-in 0.1s;
+}
+
+.nav-icon.nav-icon--active::before {
+  transform: rotate(45deg);
+}
+
+.nav-icon.nav-icon--active::after {
+  transform: rotate(-45deg);
+}
+
+.mobile-nav-btn {
+  z-index: 999;
+}

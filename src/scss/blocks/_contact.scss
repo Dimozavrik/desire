@@ -1,0 +1,220 @@
+.contact {
+  padding-bottom: 100px;
+
+  @include mediaTablet {
+    text-align: center;
+  }
+
+  &__title {
+    font-family: var(--font-accent);
+    font-size: clamp(1.75rem, 1.393rem + 1.79vw, 2.25rem);
+    line-height: 1.67;
+    font-weight: 700;
+    color: var(--title-color);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    position: relative;
+
+    &::after {
+      @include line;
+    }
+  }
+
+  &__content {
+    max-width: 829px;
+    margin-left: auto;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    margin-bottom: 21px;
+
+    @include mediaTablet {
+      justify-content: center;
+    }
+  }
+
+  &__social-item+&__social-item {
+    margin-left: 40px;
+  }
+
+  &__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    color: var(--clarified-gray);
+  }
+
+  &__address {
+    color: var(--text-color);
+    margin-bottom: 16px;
+  }
+
+  &__phone {
+    color: inherit;
+    transition: opacity .2s ease-in;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__form-field {
+    width: 48%;
+  }
+
+  &__form-placeholder {
+    &.top {
+      background-color: var(--white);
+    }
+  }
+
+  &__form-input {
+    width: 100%;
+    border: 1px solid var(--light-gray);
+    border-radius: 20px;
+    padding: 8px 15px;
+
+    @include mediaTablet {
+      text-align: center;
+    }
+  }
+
+  @include mediaTablet {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__form-area {
+    width: 100%;
+    min-height: 125px;
+    line-height: 1.75;
+    border: 1px solid var(--light-gray);
+    border-radius: 20px;
+    padding: 15px;
+    resize: none;
+    outline: none;
+
+    &+.contact__form-placeholder {
+      top: 25px;
+
+      &.top {
+        top: -15px;
+      }
+    }
+  }
+
+  &__form-input,
+  &__form-area {
+
+    &:hover {
+      border: 1px solid var(--form-border-color);
+    }
+
+    &:focus {
+      border: 1px solid var(--form-border-color);
+      outline: 1px solid var(--form-border-color);
+    }
+
+    &._error {
+      border: 1px solid var(--red);
+      box-shadow: 0 0 5px var(--red);
+      transition: all .1s ease-in-out;
+    }
+  }
+
+  &__form-label {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 2;
+    color: var(--clarified-gray);
+    display: flex;
+    align-items: center;
+    transition: color .2s ease-in;
+
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  &__form-labelinput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked+&__check::before {
+      content: "";
+      width: 13px;
+      height: 13px;
+      background-color: var(--silver);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 2px;
+    }
+
+    &__check {
+      position: absolute;
+      width: 21px;
+      height: 21px;
+      border: 1px solid var(--silver);
+      border-radius: 4px;
+    }
+
+    &__text {
+      margin-left: 32px;
+    }
+  }
+
+  &__form-btn {
+    min-width: 180px;
+    color: var(--lactic);
+    background-color: var(--gray);
+    line-height: 1.75;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 6px 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      background: linear-gradient(to right,
+          transparent 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          transparent 100%);
+      animation: glow 2s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+    }
+
+    &:active {
+      box-shadow: inset 0px 0px 15px 0 var(--black);
+      top: 1px;
+    }
+
+    @include mediaTablet {
+      flex-grow: 1;
+    }
+  }
+}

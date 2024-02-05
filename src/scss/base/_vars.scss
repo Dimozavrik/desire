@@ -1,0 +1,47 @@
+:root {
+  --container-width: 1110px;
+  --container-padding: 15px;
+  --container-max-width: 1920px;
+
+  --font-main: "Open Sans", sans-serif;
+  --font-accent: "Montserrat", sans-serif;
+
+  --black: #000;
+  --clarified-gray: #a1a1a1;
+  --dark-gray: rgba(54, 56, 56, .7);
+  --deep-gray: rgba(54, 56, 56, .9);
+  --forged-steel: #5a5a5a;
+  --gray: #363838;
+  --lactic: #fffff0;
+  --light-black: #8F8D8D;
+  --light-gray: #dfdfdf;
+  --light-gray-opacity: rgba(223, 223, 223, .5);
+  --light-white: rgba(255, 255, 255, .6);
+  --light-yellow: rgba(255, 239, 53, .5);
+  --metal: #6d7278;
+  --night: rgba(69, 70, 71, 0.5);
+  --red: #ff0000;
+  --silver: #979797;
+  --wet-gray: #707070;
+  --white: #fff;
+  --yellow: #ffef35;
+
+  --page-bg-color: var(--white);
+  --title-color: var(--gray);
+  --text-color: var(--forged-steel);
+  --text-copy-color: var(--clarified-gray);
+  --blog-page-title-arrow: var(--gray);
+  --swiper-btn-active: var(--night);
+  --swiper-pagination-blog-page-mask: var(--white);
+  --aside-filters-bg: var(--yellow);
+  --form-border-color: var(--dark-gray);
+  --footer-content-bg-color: var(--light-gray);
+  --footer-copy-bg-color: var(--gray);
+  --dot-active: var(--yellow);
+}
+
+$desktop: 1920px;
+$laptopXl: 1600px;
+$laptop: 1024px;
+$tablet: 768px;
+$mobile: 425px;

@@ -1,0 +1,57 @@
+.partners {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 16px 0 60px;
+  overflow-x: hidden;
+
+  &:before,
+  &:after {
+    content: "";
+    width: 5%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &:before {
+    left: 0;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%);
+  }
+
+  &:after {
+    right: 0;
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%);
+  }
+
+  @include mediaTablet {
+    padding: 35px 0;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    animation: runningString 20s linear infinite;
+  }
+
+  &__item {
+    margin: 0 auto;
+  }
+}
+
+@keyframes runningString {
+  from {
+    transform: translateX(105%);
+    transform-origin: right center;
+  }
+
+  to {
+    transform: translateX(-105%);
+    transform-origin: left center;
+  }
+}

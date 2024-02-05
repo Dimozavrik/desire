@@ -1,0 +1,258 @@
+.aside {
+  width: 350px;
+  margin-left: 30px;
+
+  @include mediaLaptop {
+    width: 100%;
+    margin-left: 0;
+    order: -1;
+    margin-bottom: 70px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include mediaTablet {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__search {
+    position: relative;
+    margin-bottom: 40px;
+
+    @include mediaLaptop {
+      width: 100%;
+    }
+
+    svg {
+      &:hover {
+        path {
+          fill: var(--forged-steel);
+        }
+      }
+    }
+  }
+
+  &__search-input {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--dark-gray);
+    border-radius: 20px;
+    padding: 6px 91px 6px 18px;
+    font-family: var(--font-main);
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 400;
+
+    &::placeholder {
+      font-family: var(--font-main);
+      font-size: 14px;
+      line-height: 2;
+      font-weight: 400;
+      color: var(--clarified-gray);
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: var(--text-color);
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid var(--yellow);
+      box-shadow: 0px 0px 5px 0px var(--yellow);
+    }
+
+    @media(-webkit-min-device-pixel-ratio: 0) {
+      &:focus {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__search-icons {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &__search-clear,
+  &__search-btn {
+    width: 42px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 13px;
+  }
+
+  &__search-clear {
+    display: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 15px;
+      background-color: var(--forged-steel);
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 15px;
+      background-color: var(--forged-steel);
+      transform: rotate(45deg);
+    }
+
+    &--active {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+
+  &__search-line {
+    width: 1px;
+    height: 60%;
+    background-color: var(--dark-gray);
+    position: absolute;
+    opacity: 0;
+  }
+
+  .aside__search-clear.aside__search-clear--active {
+    .aside__search-line {
+      right: -4px;
+      opacity: 1;
+    }
+  }
+
+  &__search-btn {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  &__categories,
+  &__posts,
+  &__tags,
+  &__social {
+    margin-bottom: 40px;
+  }
+
+  &__categories-title,
+  &__posts-title,
+  &__tags-title {
+    font-family: var(--font-accent);
+    line-height: 1.44;
+    font-weight: 700;
+    color: var(--title-color);
+    margin-bottom: 14px;
+  }
+
+  &__categories,
+  &__posts {
+    @include mediaLaptop {
+      width: 48%;
+    }
+
+    @include mediaTablet {
+      width: 100%;
+    }
+  }
+
+  &__categories {
+    @include mediaTablet {
+      margin-right: 15px;
+    }
+  }
+
+  &__categories-item {
+    margin-bottom: 12px;
+  }
+
+  &__categories-link {
+    color: var(--text-color);
+    @include lineBlogPage
+  }
+
+  &__posts-item {
+    margin-bottom: 10px;
+  }
+
+  &__posts-item {
+    color: var(--clarified-gray);
+  }
+
+  &__posts-item__title {
+    display: block;
+    color: var(--text-color);
+    transition: all .1s ease-in;
+
+    &:hover {
+      transform: scale(1.02);
+      color: var(--gray);
+    }
+  }
+
+  &__posts-item__date,
+  &__posts-item__author {
+    color: var(--clarified-gray);
+  }
+
+  &__posts-item__author {
+    @include lineBlogPage
+  }
+
+  &__tags,
+  &__social {
+    @include mediaLaptop {
+      width: 100%;
+    }
+  }
+
+  &__tags-link {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 600;
+    color: var(--light-black);
+    border: 1px solid var(--night);
+    border-radius: 14px;
+    margin: 0 10px 10px 0;
+    padding: 0 16px;
+    transition: background .2s ease-in-out;
+
+    &:hover {
+      color: var(--gray);
+      background: var(--light-yellow);
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    align-items: center;
+
+    @include mediaTablet {
+      justify-content: center;
+    }
+  }
+
+  &__social-item {
+    margin-right: 20px;
+  }
+
+  &__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

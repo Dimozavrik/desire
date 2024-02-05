@@ -1,0 +1,167 @@
+.inspiration {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 45px;
+
+  @include mediaTablet {
+    padding: 35px 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 414px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../img/bg/inspiration-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    z-index: -1;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    margin-right: 78px;
+    margin-left: -260px;
+
+    @include mediaTablet {
+      display: none;
+    }
+  }
+
+  &__content {
+    max-width: 824px;
+  }
+
+  &__title {
+    font-family: var(--font-accent);
+    font-size: clamp(1.75rem, 1.393rem + 1.79vw, 2.25rem);
+    line-height: 1.67;
+    font-weight: 700;
+    color: var(--title-color);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    position: relative;
+
+    &::after {
+      @include line;
+    }
+
+    @include mediaTablet {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include mediaTablet {
+      text-align: center;
+    }
+  }
+
+  &__item {
+    font-family: var(--font-accent);
+    line-height: 1.44;
+    font-weight: 700;
+    color: var(--title-color);
+    margin-bottom: 33px;
+  }
+
+  &__item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 14px;
+    border-radius: 4px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--white);
+      border-radius: 4px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--gray);
+    margin-top: -2px;
+    z-index: 1;
+  }
+
+  &__item:nth-child(1) &__line.animate--active {
+    animation-name: move--one;
+    animation-duration: 3s;
+  }
+
+  &__item:nth-child(2) &__line.animate--active {
+    animation-name: move--two;
+    animation-duration: 3s;
+  }
+
+  &__item:nth-child(3) &__line.animate--active {
+    animation-name: move--three;
+    animation-duration: 3s;
+  }
+
+  &__item:nth-child(4) &__line.animate--active {
+    animation-name: move--four;
+    animation-duration: 3s;
+  }
+}
+
+@keyframes move--one {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes move--two {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes move--three {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 75%;
+  }
+}
+
+@keyframes move--four {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 40%;
+  }
+}

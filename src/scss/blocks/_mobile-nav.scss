@@ -1,0 +1,18 @@
+.mobile-nav {
+  display: none;
+  transform: translateY(-100em);
+  transition: transform .5s ease-in;
+  position: absolute;
+  top: 119px;
+  bottom: 0;
+  background: var(--white);
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+  overflow: auto;
+
+  &--active {
+    display: block;
+    transform: translateY(0%);
+  }
+}

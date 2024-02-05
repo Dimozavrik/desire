@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__list-item">
+            <a class="menu__list-link menu__list-link--active" href="#!">About</a>
+          </li>
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="gallery-page.html">Gallery</a>
+          </li>
+        </ul>
+      </nav>
+      <a class="logo" href="index.html">
+        <img src="img/icons/logo.png" alt="logo" draggable="false">
+      </a>
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="blog.html">Blog</a>
+          </li>
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="contacts.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-overlay"></div>
+      <button class="header__btn-menu">
+        <span></span>
+      </button>
+      @@include('mobile-nav.html')
+      <button class="header__btn">
+        <img src="img/icons/open-btn.svg" alt="open button" draggable="false">
+      </button>
+      @@include('rightside-menu.html')
+    </div>
+  </div>
+</header>

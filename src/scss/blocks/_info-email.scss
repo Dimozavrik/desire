@@ -1,0 +1,24 @@
+.info-email {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  padding-left: 30px;
+  margin-bottom: 22px;
+  position: relative;
+  transition: opacity .2s ease-in;
+
+  &::before {
+    content: "";
+    background-image: url(./../img/icons/mail.svg);
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 16px;
+    height: 12px;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+}

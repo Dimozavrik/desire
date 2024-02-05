@@ -1,0 +1,132 @@
+.gallery-page {
+  .gallery__content-img {
+    max-height: 300px;
+  }
+
+  #content-1 {
+    .gallery__content-link:first-child {
+      grid-column: span 1;
+      grid-row: 1;
+    }
+
+    @include mediaTablet {
+
+      .gallery__content-link:nth-child(2),
+      .gallery__content-link:nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+
+    @include mediaMobile {
+
+      .gallery__content-link:nth-child(2),
+      .gallery__content-link:nth-child(3) {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  #content-2 {
+
+    .gallery__content-link:nth-child(2),
+    .gallery__content-link:nth-child(3) {
+      grid-row: span 2;
+    }
+
+    @include mediaTablet {
+
+      .gallery__content-link:nth-child(2),
+      .gallery__content-link:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .gallery__content-link:last-child {
+        grid-column: span 3;
+      }
+    }
+
+    @include mediaMobile {
+      .gallery__content-link:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .gallery__content-link:nth-child(3) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .gallery__content-link:last-child {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  #content-3 {
+    grid-template-rows: repeat(1, 1fr);
+
+    .gallery__content-link:first-child {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .gallery__content-link:nth-child(7) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    @include mediaTablet {
+      .gallery__content-link:nth-child(7) {
+        grid-column: span 3;
+        grid-row: span 1;
+      }
+    }
+
+    @include mediaMobile {
+      .gallery__content-link:nth-child(7) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+    }
+  }
+
+  #content-4 {
+    .gallery__content-link:first-child {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .gallery__content-link:nth-child(2) {
+      grid-column: span 2;
+    }
+
+    @include mediaTablet {
+      .gallery__content-link:first-child {
+        grid-column: span 1;
+      }
+    }
+
+    @include mediaMobile {
+      .gallery__content-link:first-child {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  #content-5 {
+
+    .gallery__content-link:first-child,
+    .gallery__content-link:nth-child(2),
+    .gallery__content-link:nth-child(4),
+    .gallery__content-link:nth-child(5) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .gallery__content-link:nth-child(3) {
+      grid-column: span 4;
+      grid-row: span 1;
+    }
+  }
+}

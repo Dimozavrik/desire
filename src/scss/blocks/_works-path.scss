@@ -1,0 +1,134 @@
+.works-path {
+  padding: 80px 0 30px;
+
+  @include mediaTablet {
+    padding: 35px 0;
+  }
+
+  &__title {
+    font-family: var(--font-accent);
+    font-size: clamp(1.75rem, 1.393rem + 1.79vw, 2.25rem);
+    line-height: 1.42;
+    font-weight: 700;
+    text-align: center;
+    color: var(--title-color);
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    @include mediaTablet {
+      text-align: center;
+    }
+  }
+
+  &__items-box {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--dark-gray);
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      border-radius: 50%;
+      background-color: var(--gray);
+
+      @include mediaTablet {
+        display: none;
+      }
+    }
+
+    @include mediaTablet {
+      flex-direction: column;
+      flex-wrap: wrap;
+      border: none;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+
+    @include mediaTablet {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__item--production {
+    margin-left: 317px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--dark-gray);
+
+      @include mediaTablet {
+        display: none;
+      }
+    }
+
+    @include mediaTablet {
+      order: 1;
+      margin-left: 0;
+    }
+  }
+
+  &__item--production,
+  &__item--consultation {
+    padding-bottom: 35px;
+  }
+
+  &__item--measuring {
+    padding-top: 35px;
+    margin-left: 305px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      top: 0;
+      left: 0;
+      background-color: var(--dark-gray);
+
+      @include mediaTablet {
+        display: none;
+      }
+    }
+
+    @include mediaTablet {
+      margin-left: 0;
+      padding-top: 0;
+      padding-bottom: 35px;
+    }
+  }
+
+  &__item-title {
+    font-family: var(--font-accent);
+    font-weight: 700;
+    color: var(--title-color);
+    margin-left: 13px;
+
+    @include mediaTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__item-text {
+    margin-top: 13px;
+  }
+}

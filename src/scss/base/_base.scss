@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,300italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import "mixins";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+  min-width: 320px;
+  color: var(--text-color);
+  background-color: var(--page-bg-color);
+}
+
+svg {
+  &:hover {
+    path {
+      transition: fill .2s ease-in;
+      fill: var(--yellow);
+    }
+  }
+}
+
+.swiper-button-prev--mobile.swiper-button-disabled,
+.swiper-button-next--mobile.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.swiper-button-prev--mobile:active,
+.swiper-button-next--mobile:active {
+  @include mediaTablet {
+    background-color: var(--swiper-btn-active);
+  }
+}
+
+.swiper-button-prev--mobile:active {
+  @include mediaTablet {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+
+.swiper-button-next--mobile:active {
+  @include mediaTablet {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+@keyframes glow {
+  0% {
+    transform: translate(-100%);
+  }
+
+  50% {
+    transform: translate(100%);
+  }
+
+  100% {
+    transform: translate(100%);
+  }
+}
+
+.form__field {
+  position: relative;
+  flex-grow: 1;
+}
+
+.form__email,
+.form__input {
+  transition: all .15s ease-in-out;
+
+  &:hover+.form__placeholder {
+    color: var(--text-color) !important;
+  }
+
+  &:focus {
+    outline: 1px solid var(--form-border-color);
+
+    &+.form__placeholder.top {
+      font-weight: 500;
+    }
+  }
+
+  &._error {
+    transition: all .1s ease-in-out;
+  }
+
+  &:hover._error,
+  &:focus._error {
+    border: 1px solid var(--form-border-color);
+    box-shadow: none;
+  }
+
+  &:hover._error {
+    outline: none;
+  }
+
+  &:focus._error {
+    outline: 1px solid var(--form-border-color);
+  }
+}
+
+.name {
+  text-transform: capitalize;
+}
+
+
+.form__placeholder {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--clarified-gray);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  transform-origin: left;
+  user-select: none;
+  pointer-events: none;
+  transition: all .2s ease-in-out;
+
+  &.top {
+    top: -15px;
+    color: var(--text-color);
+    background-color: var(--footer-content-bg-color);
+    transform: scale(.75);
+  }
+}
